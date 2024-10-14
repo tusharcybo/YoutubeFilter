@@ -1,0 +1,25 @@
+{
+    "manifest_version": 3,
+    "name": "YouTube Filter Extension",
+    "version": "1.0",
+    "description": "Block unwanted YouTube videos based on keywords and channel names.",
+    "permissions": [
+      "activeTab",
+      "storage",
+      "scripting"
+    ],
+    "action": {
+      "default_popup": "popup.html",
+      "default_icon" : "apple.png"
+    },
+    "background": {
+      "service_worker": "background.js"
+    },
+    "content_scripts": [
+      {
+        "matches": ["*://www.youtube.com/*"],
+        "js": ["content.js"]
+      }
+    ]
+}
+  
